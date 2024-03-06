@@ -52,7 +52,7 @@ code.src = "img/Code.png"
 
 // CSS
 let css = document.createElement("img")
-css.src = "img/Css.png"
+css.src = "img/CSS.png"
 // CSS
 
 // HTML
@@ -106,7 +106,7 @@ code2.src = "img/Code.png"
 
 // CSS
 let css2 = document.createElement("img")
-css2.src = "img/Css.png"
+css2.src = "img/CSS.png"
 // CSS
 
 // HTML
