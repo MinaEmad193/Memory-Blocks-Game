@@ -26,12 +26,53 @@ startBtn.addEventListener("click", function() {
     inBtn.style.display = "block"
 })
 
+
 inBtn.addEventListener("click", function() {
     inputValue = nameInputField.value
     let userName = document.querySelector(".name")
     userName.innerHTML = inputValue
     startMsgBox.style.display = "none"
+
+    // Make Timer
+    let timeText = document.querySelector(".time")
+    let s = 120
+    timeText.innerHTML = s
+    
+    time = setInterval(() => {
+        timeText.innerHTML = s
+        s -= 1
+        if (s === -1) {
+            clearInterval(time)
+            timeText.innerHTML = "0"
+
+            let loseMsgBox = document.createElement("div")
+            loseMsgBox.className = "lose-msg"
+            document.body.appendChild(loseMsgBox)
+
+            let loseMsg = document.createElement("p")
+            loseMsg.innerHTML = `The Time Is Over, You Have ${rightTries} Right Answers And ${wrongTries} Wrong`
+            loseMsgBox.appendChild(loseMsg)
+
+            let loseBtn = document.createElement("button")
+            loseBtn.innerHTML = "Try Again !"
+            loseMsgBox.appendChild(loseBtn)
+            console.log(wrongTries)
+
+            loseBtn.addEventListener("click", function() {
+                window.location.reload()
+            })
+        }
+
+        if (rightTries === 10) {
+            clearInterval(time)
+            timeText.innerHTML = "0"
+        }
+    }, 1000);
+
 })
+// Make Timer
+
+
 // Start Message
 
 // Images Var
@@ -242,6 +283,7 @@ allImgs.forEach((ele) => ele.addEventListener("click", function() {
 
             // Generate Win Msg
             if (rightTries === 10) {
+                
                 let body = document.querySelector("body")
                 let winMsgBox = document.createElement("div")
                 winMsgBox.className = "win-msg"

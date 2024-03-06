@@ -50,8 +50,8 @@ body {
     .win-msg {
         background-color: rgba(21, 163, 68, 0.904);
         position: absolute;
-        top:calc(50% - 100px);
         width:100%;
+        height: 100%;
         backdrop-filter: blur(2px);
         display: flex;
         flex-direction: column;
@@ -67,6 +67,31 @@ body {
             cursor: pointer;
             font-weight: bold;
             position: relative;
+        }
+    }
+
+    .lose-msg {
+        width:100%;
+        height:100%;
+        background-color: rgba(219, 2, 2, 0.712);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        text-align: center;
+        backdrop-filter: blur(2px);
+        p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        button {
+            cursor: pointer;
+            border-radius: 9999px;
+            border: none;
+            font-weight:bold;
+            padding:10px;
         }
     }
 }
